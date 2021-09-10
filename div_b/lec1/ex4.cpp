@@ -7,37 +7,20 @@
 #include <iostream>
 #include <cmath>
 
-int n_greater(std::vector<int> numbers, double num) {
-  int left = 0;
-  int right = numbers.size();
-
-  while (left != right) {
-    int mid = (left + right) / 2;
-
-    if (num > numbers[mid]) {
-      left = mid;
-    } else {
-      right = mid - 1;
-    }
-  }
-  return numbers.size() - left - 1;
-}
-
 int main() {
-  int64_t sum = 0;
-  int n, dist;
+  int n, place;
 
   std::cin >> n;
-  std::vector<int> places(n);
 
-  for (auto &place : places) {
+  for (int i = 0; i < n / 2; ++i) {
     std::cin >> place;
-    sum += place;
   }
 
-  double avg = static_cast<double>(sum) / static_cast<double>(n)
+  if (n % 2) {
+    std::cin >> place;
+  }
 
-  std::cout <<  << std::endl;
+  std::cout << place << std::endl;
 
   return 0;
 }
